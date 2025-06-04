@@ -13,7 +13,7 @@ w = './MERcnn.pth'
 model = MER.to_device(MER.MERcnn(), device)
 
 if str(device) == 'cpu':
-    model.load_state_dict(torch.load(w, map_location=torch.device('cpu')), strict=False)
+    model.load_state_dict(torch.load(w, map_location=torch.device('cpu')))
     print("Model loaded on CPU.")
 if str(device) == 'gpu':
     model.load_state_dict(torch.load(w, map_location=torch.device('cuda')))
